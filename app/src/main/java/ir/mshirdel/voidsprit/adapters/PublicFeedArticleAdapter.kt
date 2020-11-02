@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ir.mshirdel.voidsprit.R
+import ir.mshirdel.voidsprit.models.Article
 
-class PublicFeedArticleAdapter(private val myDataset: List<String>):
+class PublicFeedArticleAdapter(private val myDataset: List<Article>):
     RecyclerView.Adapter<PublicFeedArticleAdapter.ViewHolder>()
 {
     class ViewHolder(val v: View) : RecyclerView.ViewHolder(v) {
@@ -26,7 +27,7 @@ class PublicFeedArticleAdapter(private val myDataset: List<String>):
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textView.text = myDataset[position]
+        holder.textView.text = myDataset.get(position).title
     }
 
     override fun getItemCount() = myDataset.size
