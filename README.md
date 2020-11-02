@@ -10,3 +10,4 @@ Todos:
 [ ] Register user
 [ ] Authenticate user
 [ ] User profile section
+    [ ] show profile image
