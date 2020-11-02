@@ -11,12 +11,9 @@ import ir.mshirdel.voidsprit.models.Article
 class PublicFeedArticleAdapter(private val myDataset: List<Article>):
     RecyclerView.Adapter<PublicFeedArticleAdapter.ViewHolder>()
 {
-    class ViewHolder(val v: View) : RecyclerView.ViewHolder(v) {
-        val textView: TextView
-
-        init {
-            textView = v.findViewById(R.id.tvArticleTitle)
-        }
+    class ViewHolder(private val v: View) : RecyclerView.ViewHolder(v) {
+        val tvTitle: TextView = v.findViewById(R.id.tvArticleTitle)
+        val tvAuthor: TextView = v.findViewById(R.id.tvArticleAuthor)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,7 +24,8 @@ class PublicFeedArticleAdapter(private val myDataset: List<Article>):
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textView.text = myDataset.get(position).title
+        holder.tvTitle.text = myDataset.get(position).title
+        holder.tvAuthor.text = myDataset.get(position).author.username
     }
 
     override fun getItemCount() = myDataset.size

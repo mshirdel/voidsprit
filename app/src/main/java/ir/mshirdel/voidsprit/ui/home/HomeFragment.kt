@@ -28,7 +28,6 @@ class HomeFragment : Fragment() {
         homeViewModel =
             ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-//        val textView: TextView = root.findViewById(R.id.text_home)
         homeViewModel.tags.observe(viewLifecycleOwner, Observer {
             viewManager = LinearLayoutManager(this.context)
             viewAdapter = PublicFeedArticleAdapter(it)
