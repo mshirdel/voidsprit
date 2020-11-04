@@ -1,15 +1,15 @@
-package ir.mshirdel.voidsprit.ui.notifications
+package ir.mshirdel.voidsprit.ui.explore
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class ExploreViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
 
 
-        value = "Notification Screen"
+        value = "Explore articles Screen"
 
 
     }

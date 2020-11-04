@@ -2,6 +2,8 @@ package ir.mshirdel.voidsprit.models
 
 import java.util.*
 
+data class ArticleApiHolder(val articles: List<Article>, val articleCount: Int)
+
 data class Article(
     val userId: String,
     val slug: String,

@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import ir.mshirdel.voidsprit.BackendService
-import ir.mshirdel.voidsprit.apimodels.ArticleApi
 import ir.mshirdel.voidsprit.models.Article
+import ir.mshirdel.voidsprit.models.ArticleApiHolder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,12 +23,12 @@ class HomeViewModel : ViewModel() {
         val service = retrofit.create(BackendService::class.java)
         val tagsCall = service.getArticles()
         value = listOf()
-        tagsCall.enqueue(object : Callback<ArticleApi>{
-            override fun onResponse(call: Call<ArticleApi>, response: Response<ArticleApi>) {
+        tagsCall.enqueue(object : Callback<ArticleApiHolder>{
+            override fun onResponse(call: Call<ArticleApiHolder>, response: Response<ArticleApiHolder>) {
                 value = response.body()?.articles
             }
 
-            override fun onFailure(call: Call<ArticleApi>, t: Throwable) {
+            override fun onFailure(call: Call<ArticleApiHolder>, t: Throwable) {
                 Log.d("ARTICLE_API", t.message ?: "error")
             }
 

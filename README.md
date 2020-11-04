@@ -5,7 +5,7 @@ This application created for learning Android app architecture. For backend I us
 Example Spring codebase containing real world examples (CRUD, auth, advanced patterns, etc) 
 that adheres to the RealWorld API spec.
 
-Todos:
+Todo list:
 [ ] Article Feed
 [ ] Register user
 [ ] Authenticate user
